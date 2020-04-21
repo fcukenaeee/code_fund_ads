@@ -137,6 +137,18 @@ module Campaigns
       pacing_too_slow?
     end
 
+<<<<<<< HEAD
+=======
+    def gross_revenue_percentage
+      (summary.gross_revenue / total_budget) * 100
+    end
+
+    def should_display_budget_warnings?
+      return false if start_date.future? || start_date.today?
+      (percentage_complete_by_date - gross_revenue_percentage).abs >= 5
+    end
+
+>>>>>>> parent of dc002ed0... Gracefully handle missing summary (#1223)
     # Budget availability helpers ............................................................................
 
     # Returns a boolean indicating if the campaign has available budget
